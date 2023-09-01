@@ -33,9 +33,6 @@ readCSV("20230829-DepewField-Private-2_unverified.csv")
 readCSV("20230830-DepewField-Private-1_unverified.csv")
 readCSV("20230830-DepewField-Private-2_unverified.csv")
 
-with open('readme.txt', 'w') as f:
-    f.write('readme')
-
 def writePitcherData():
   with open('pitcherData.txt', 'w') as f:
     for player in pitchers:
