@@ -24,25 +24,126 @@ class Pitcher:
                 totSpin += float(pitch.spin)
                 if pitch.outcome == "StrikeCalled":
                     totStrike += 1
-        return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
-
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgChangeup(self):
-        pass
-
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgCurveball(self):
-        pass
-
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgSlider(self):
-        pass
-
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgSplitter(self):
-        pass
-
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgCutter(self):
-        pass
-
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgSinker(self):
-        pass
-
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
+        
     def avgTwoSeam(self):
-        pass
+        numPitches = 0
+        totVelo = 0
+        totSpin = 0
+        totStrike = 0
+        for pitch in self.pitches:
+            if pitch.ptype == "Fastball":
+                numPitches += 1
+                totVelo += float(pitch.velocity)
+                totSpin += float(pitch.spin)
+                if pitch.outcome == "StrikeCalled":
+                    totStrike += 1
+        if (numPitches > 0): 
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:
+            return ""
