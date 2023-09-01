@@ -1,4 +1,5 @@
 from pitch import Pitch
+import matplotlib.pyplot as plt
 
 class Pitcher:
     def __init__(self, name, handedness):
@@ -175,7 +176,8 @@ class Pitcher:
                 totHBreak += float(pitch.hbreak)
                 if pitch.outcome == "StrikeCalled":
                     totStrike += 1
-        if (numPitches > 0): 
+        if (numPitches > 0):
             return("TwoSeams Thrown: " + str(numPitches) + "\n" + "Average TwoSeam Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average TwoSeam Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Average TwoSeam Vertical Break: " + str(round((totVBreak/numPitches), 1)) + "\n" + "Average TwoSeam Horizontal Break: " + str(round((totHBreak/numPitches), 1)) + "\n" "TwoSeam Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
         else:
             return ""
+    

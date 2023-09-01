@@ -1,6 +1,9 @@
+import matplotlib.pyplot as plt
 import csv
 from pitcher import Pitcher
 from pitch import Pitch
+import numpy as np
+from matplotlib.patches import Rectangle
 
 def readPitch(arr):
   pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
@@ -40,4 +43,27 @@ def writePitcherData():
       f.write(pitcherString)
       print(str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
 
+#def pltFastballs(Pitcher): 
+xSet = []
+ySet = []
+for pitch in pitchers[10].pitches:
+    if pitch.ptype == "Fastball":
+        xSet.append(float(pitch.plside))
+        ySet.append(float(pitch.plheight))
+
+plt.scatter(xSet, ySet, label= "Fastballs", c= "blue", marker= ".")
+fig, ax = plt.subplots()   
+plt.xlabel('Pitch Width (ft)')
+
+plt.ylabel('Pitch Height (ft)')
+
+ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
+plt.title("Fastball Location")
+
+plt.legend()
+
+plt.show()
+plt.savefig('FastballPlot.png')
+
+#pltFastballs(pitchers[0])
 writePitcherData()
