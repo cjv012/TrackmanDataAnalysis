@@ -28,4 +28,4 @@ with open("20230830-DepewField-Private-2_unverified.csv", 'r') as file:
       
     i += 1
 for player in pitchers:
-  print(str(player) + "\n" + str(player.pitches[0]))
+  print(str(player) + "\n" + str(player.avgFastball()) + "\n")
