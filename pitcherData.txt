@@ -302,3 +302,7 @@ Average Slider Spin Rate: 2258.6
 Average Slider Vertical Break: -3.6
 Average Slider Horizontal Break: -16.6
 Slider Strike Percentage: 12.5%
+
+
+
+
