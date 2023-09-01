@@ -51,6 +51,7 @@ class Pitcher:
                     totStrike += 1
         if (numPitches > 0): 
             return("Changeups Thrown: " + str(numPitches) + "\n" + "Average Changeup Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Changeup Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Average Changeup Vertical Break: " + str(round((totVBreak/numPitches), 1)) + "\n" + "Average Changeup Horizontal Break: " + str(round((totHBreak/numPitches), 1)) + "\n" "Changeup Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+        else:  
             return ""
         
     def avgCurveball(self):
