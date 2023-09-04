@@ -43,27 +43,78 @@ def writePitcherData():
       f.write(pitcherString)
       print(str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
 
-#def pltFastballs(Pitcher): 
-xSet = []
-ySet = []
-for pitch in pitchers[10].pitches:
-    if pitch.ptype == "Fastball":
-        xSet.append(float(pitch.plside))
-        ySet.append(float(pitch.plheight))
+def pltPitches(Player): 
+  xFast = []
+  yFast = []
 
-plt.scatter(xSet, ySet, label= "Fastballs", c= "blue", marker= ".")
-fig, ax = plt.subplots()   
-plt.xlabel('Pitch Width (ft)')
+  xChup = []
+  yChup = []
 
-plt.ylabel('Pitch Height (ft)')
+  xSplit = []
+  ySplit = []
 
-ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
-plt.title("Fastball Location")
+  xSlid = []
+  ySlid = []
 
-plt.legend()
+  xCurv = []
+  yCurv = []
 
-plt.show()
-plt.savefig('FastballPlot.png')
+  xSink = []
+  ySink = []
 
-#pltFastballs(pitchers[0])
+  xTsea = []
+  yTsea = []
+
+  xCutt = []
+  yCutt = []
+
+  for pitch in Player.pitches:
+      if pitch.ptype == "Fastball":
+        xFast.append(float(pitch.plside))
+        yFast.append(float(pitch.plheight))
+      elif pitch.ptype == "ChangeUp":
+        xChup.append(float(pitch.plside))
+        yChup.append(float(pitch.plheight))
+      elif pitch.ptype == "Splitter":
+        xSplit.append(float(pitch.plside))
+        ySplit.append(float(pitch.plheight))
+      elif pitch.ptype == "Slider":
+        xSlid.append(float(pitch.plside))
+        ySlid.append(float(pitch.plheight))
+      elif pitch.ptype == "Curveball":
+        xCurv.append(float(pitch.plside))
+        yCurv.append(float(pitch.plheight))
+      elif pitch.ptype == "Sinker":
+        xSink.append(float(pitch.plside))
+        ySink.append(float(pitch.plheight))
+      elif pitch.ptype == "TwoSeamFastball":
+        xTsea.append(float(pitch.plside))
+        yTsea.append(float(pitch.plheight))
+      elif pitch.ptype == "Cutter":
+        xCutt.append(float(pitch.plside))
+        yCutt.append(float(pitch.plheight))
+      
+
+  plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
+  plt.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
+  plt.scatter(xSplit, ySplit, label= "Splitters", c= "green", marker= ".")
+  plt.scatter(xSlid, ySlid, label= "Sliders", c= "orange", marker= ".")
+  plt.scatter(xCurv, yCurv, label= "Curveballs", c= "purple", marker= ".")
+  plt.scatter(xCutt, yCutt, label= "Cutters", c= "yellow", marker= ".")
+  plt.scatter(xSink, ySink, label= "Sinkers", c= "pink", marker= ".")
+  plt.scatter(xTsea, yTsea, label= "TwoSeams", c= "brown", marker= ".")
+  #fig, ax = plt.subplots()   
+  plt.xlabel('Pitch Width (ft)')
+
+  plt.ylabel('Pitch Height (ft)')
+
+  #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
+  plt.title(" Location")
+
+  plt.legend()
+
+  plt.show()
+  plt.savefig((str(Player.name) + 'Pitches.png'))
+
+pltPitches(pitchers[10])
 writePitcherData()
