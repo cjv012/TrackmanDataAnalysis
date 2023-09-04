@@ -98,7 +98,7 @@ def pltPitches(Player):
         xCutt.append(float(pitch.plside))
         yCutt.append(float(pitch.plheight))
 
-  rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "gray", linewidth = 2)    
+  rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "gray", linewidth = 2)   
   plt.gca().add_patch(rect)
   shadow=mpatches.Rectangle((-1,1.1),2,2.6, fill = False, color = "gray", linewidth = 2)    
   plt.gca().add_patch(shadow)
