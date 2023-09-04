@@ -115,6 +115,8 @@ def pltPitches(Player):
 
   plt.show()
   plt.savefig((str(Player.name) + 'Pitches.png'))
+  plt.clf()
 
-pltPitches(pitchers[10])
+for players in pitchers:
+  pltPitches(players)
 writePitcherData()
