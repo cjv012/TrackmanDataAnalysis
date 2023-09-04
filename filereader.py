@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.pyplot as fig
 import csv
 from pitcher import Pitcher
 from pitch import Pitch
@@ -132,6 +133,90 @@ def pltPitches(Player):
   plt.savefig((str(Player.name) + 'Pitches.png'))
   plt.clf()
 
+def pltMovement(Player): 
+  """Creates of a plot of all of the players given pitches plotted on a scatter plot with a zone and exported as a .png with the pitchers name"""
+  xFast = []
+  yFast = []
+
+  xChup = []
+  yChup = []
+
+  xSplit = []
+  ySplit = []
+
+  xSlid = []
+  ySlid = []
+
+  xCurv = []
+  yCurv = []
+
+  xSink = []
+  ySink = []
+
+  xTsea = []
+  yTsea = []
+
+  xCutt = []
+  yCutt = []
+
+  for pitch in Player.pitches:
+      if pitch.ptype == "Fastball":
+        xFast.append(float(pitch.hbreak))
+        yFast.append(float(pitch.vbreak))
+      elif pitch.ptype == "ChangeUp":
+        xChup.append(float(pitch.hbreak))
+        yChup.append(float(pitch.vbreak))
+      elif pitch.ptype == "Splitter":
+        xSplit.append(float(pitch.hbreak))
+        ySplit.append(float(pitch.vbreak))
+      elif pitch.ptype == "Slider":
+        xSlid.append(float(pitch.hbreak))
+        ySlid.append(float(pitch.vbreak))
+      elif pitch.ptype == "Curveball":
+        xCurv.append(float(pitch.hbreak))
+        yCurv.append(float(pitch.vbreak))
+      elif pitch.ptype == "Sinker":
+        xSink.append(float(pitch.hbreak))
+        ySink.append(float(pitch.vbreak))
+      elif pitch.ptype == "TwoSeamFastball":
+        xTsea.append(float(pitch.hbreak))
+        yTsea.append(float(pitch.vbreak))
+      elif pitch.ptype == "Cutter":
+        xCutt.append(float(pitch.hbreak))
+        yCutt.append(float(pitch.vbreak))
+  if len(xFast) != 0:
+    fig.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
+  if len(xChup) != 0:
+    fig.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
+  if len(xSplit) != 0:
+    fig.scatter(xSplit, ySplit, label= "Splitters", c= "green", marker= ".")
+  if len(xSlid) != 0:
+    fig.scatter(xSlid, ySlid, label= "Sliders", c= "orange", marker= ".")
+  if len(xCurv) != 0:
+    fig.scatter(xCurv, yCurv, label= "Curveballs", c= "purple", marker= ".")
+  if len(xCutt) != 0:
+    fig.scatter(xCutt, yCutt, label= "Cutters", c= "yellow", marker= ".")
+  if len(xSink) != 0:
+    fig.scatter(xSink, ySink, label= "Sinkers", c= "pink", marker= ".")
+  if len(xTsea) != 0:
+    fig.scatter(xTsea, yTsea, label= "TwoSeams", c= "brown", marker= ".")
+  #fig, ax = plt.subplots()   
+  fig.xlabel('Horizontal Break (in)')
+
+  fig.ylabel('Vertical Break (in)')
+  fig.axvline(x=0, c="black")
+  fig.axhline(y=0, c="black")
+  #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
+  fig.title(str(Player.name) + "\'s Pitch Movement")
+  fig.xlim(-25, 25)
+  fig.ylim(-25, 25)
+  fig.legend(fontsize = "8")
+  fig.show()
+  fig.savefig((str(Player.name) + 'Movement.png'))
+  fig.clf()
+
+
 for players in pitchers:
   pltPitches(players)
+  pltMovement(players)
 writePitcherData()
