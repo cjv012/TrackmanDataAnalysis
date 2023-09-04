@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.patches as mpatches
 
 def readPitch(arr):
+  """Reads a line from the trackman csv and documents it as a pitch object"""
   pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
   return pitch
 
@@ -13,6 +14,7 @@ def readPitch(arr):
 pitchers = []
 
 def readCSV(csvfileString):
+  """Opens a CSV file and reads in the rows and attributes each pitch to a pitcher that is placed in the picher array as a pitcher object"""
   with open(csvfileString, 'r') as file:
     csvreader = csv.reader(file)
     i = 0
@@ -37,6 +39,7 @@ readCSV("20230830-DepewField-Private-1_unverified.csv")
 readCSV("20230830-DepewField-Private-2_unverified.csv")
 
 def writePitcherData():
+  """Writes the averages of all of the pitchers data to a text document"""
   with open('pitcherData.txt', 'w') as f:
     for player in pitchers:
       pitcherString = (str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
@@ -44,6 +47,7 @@ def writePitcherData():
       #print(str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
 
 def pltPitches(Player): 
+  """Creates of a plot of all of the players given pitches plotted on a scatter plot with a zone and exported as a .png with the pitchers name"""
   xFast = []
   yFast = []
 

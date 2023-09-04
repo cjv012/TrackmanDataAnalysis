@@ -2,18 +2,23 @@ from pitch import Pitch
 import matplotlib.pyplot as plt
 
 class Pitcher:
+    """Class to store pitcher objects"""
     def __init__(self, name, handedness):
+        """Class constructor for the pitcher object creates the name handness and an array to store every pitch as a pitch object"""
         self.name = name
         self.handedness = handedness
         self.pitches = []
 
     def insertPitch(self, pitchInstance):
+        """Method to add new pitch objects to the pitcher array"""
         self.pitches.append(pitchInstance)
 
     def __str__(self):
+        """String method to return the pitchers name"""
         return self.name
 
     def avgFastball(self):
+        """Calculates the pitchers average Fastball metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -35,6 +40,7 @@ class Pitcher:
             return ""
         
     def avgChangeup(self):
+        """Calculates the pitchers average Changeup metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -56,6 +62,7 @@ class Pitcher:
             return ""
         
     def avgCurveball(self):
+        """Calculates the pitchers average Curveball metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -77,6 +84,7 @@ class Pitcher:
             return ""
         
     def avgSlider(self):
+        """Calculates the pitchers average slider metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -98,6 +106,7 @@ class Pitcher:
             return ""
         
     def avgSplitter(self):
+        """Calculates the pitchers average Splitter metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -119,6 +128,7 @@ class Pitcher:
             return ""
         
     def avgCutter(self):
+        """Calculates the pitchers average Cutter metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -140,6 +150,7 @@ class Pitcher:
             return ""
         
     def avgSinker(self):
+        """Calculates the pitchers average Sinker metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
@@ -161,6 +172,7 @@ class Pitcher:
             return ""
         
     def avgTwoSeam(self):
+        """Calculates the pitchers average TwoSeam metrics and prints them"""
         numPitches = 0
         totVelo = 0
         totSpin = 0
