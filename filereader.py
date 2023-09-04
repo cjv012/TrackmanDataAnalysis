@@ -96,6 +96,8 @@ def pltPitches(Player):
 
   rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "gray", linewidth = 2)    
   plt.gca().add_patch(rect)
+  shadow=mpatches.Rectangle((-1,1.1),2,2.6, fill = False, color = "gray", linewidth = 2)    
+  plt.gca().add_patch(shadow)
   if len(xFast) != 0:
     plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
   if len(xChup) != 0:
