@@ -94,7 +94,7 @@ def pltPitches(Player):
         xCutt.append(float(pitch.plside))
         yCutt.append(float(pitch.plheight))
 
-  rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "purple", linewidth = 2)    
+  rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "gray", linewidth = 2)    
   plt.gca().add_patch(rect)
   plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
   plt.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
@@ -111,8 +111,9 @@ def pltPitches(Player):
 
   #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
   plt.title(" Location")
-
-  plt.legend()
+  plt.xlim(-3, 3)
+  plt.ylim(-1, 5)
+  plt.legend(fontsize = "8")
   plt.show()
   plt.savefig((str(Player.name) + 'Pitches.png'))
   plt.clf()
