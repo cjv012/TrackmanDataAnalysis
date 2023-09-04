@@ -124,7 +124,7 @@ def pltPitches(Player):
   plt.ylabel('Pitch Height (ft)')
 
   #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
-  plt.title(" Location")
+  plt.title(str(Player.name) + "\'s Pitch Locations")
   plt.xlim(-3, 3)
   plt.ylim(-1, 5)
   plt.legend(fontsize = "8")
