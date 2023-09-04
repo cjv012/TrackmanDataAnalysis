@@ -96,14 +96,22 @@ def pltPitches(Player):
 
   rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "gray", linewidth = 2)    
   plt.gca().add_patch(rect)
-  plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
-  plt.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
-  plt.scatter(xSplit, ySplit, label= "Splitters", c= "green", marker= ".")
-  plt.scatter(xSlid, ySlid, label= "Sliders", c= "orange", marker= ".")
-  plt.scatter(xCurv, yCurv, label= "Curveballs", c= "purple", marker= ".")
-  plt.scatter(xCutt, yCutt, label= "Cutters", c= "yellow", marker= ".")
-  plt.scatter(xSink, ySink, label= "Sinkers", c= "pink", marker= ".")
-  plt.scatter(xTsea, yTsea, label= "TwoSeams", c= "brown", marker= ".")
+  if len(xFast) != 0:
+    plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
+  if len(xChup) != 0:
+    plt.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
+  if len(xSplit) != 0:
+    plt.scatter(xSplit, ySplit, label= "Splitters", c= "green", marker= ".")
+  if len(xSlid) != 0:
+    plt.scatter(xSlid, ySlid, label= "Sliders", c= "orange", marker= ".")
+  if len(xCurv) != 0:
+    plt.scatter(xCurv, yCurv, label= "Curveballs", c= "purple", marker= ".")
+  if len(xCutt) != 0:
+    plt.scatter(xCutt, yCutt, label= "Cutters", c= "yellow", marker= ".")
+  if len(xSink) != 0:
+    plt.scatter(xSink, ySink, label= "Sinkers", c= "pink", marker= ".")
+  if len(xTsea) != 0:
+    plt.scatter(xTsea, yTsea, label= "TwoSeams", c= "brown", marker= ".")
   #fig, ax = plt.subplots()   
   plt.xlabel('Pitch Width (ft)')
 
