@@ -3,7 +3,7 @@ import csv
 from pitcher import Pitcher
 from pitch import Pitch
 import numpy as np
-from matplotlib.patches import Rectangle
+import matplotlib.patches as mpatches
 
 def readPitch(arr):
   pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
@@ -93,8 +93,9 @@ def pltPitches(Player):
       elif pitch.ptype == "Cutter":
         xCutt.append(float(pitch.plside))
         yCutt.append(float(pitch.plheight))
-      
 
+  rect=mpatches.Rectangle((-.8,1.3),1.6,2.2, fill = False, color = "purple", linewidth = 2)    
+  plt.gca().add_patch(rect)
   plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
   plt.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
   plt.scatter(xSplit, ySplit, label= "Splitters", c= "green", marker= ".")
@@ -112,7 +113,6 @@ def pltPitches(Player):
   plt.title(" Location")
 
   plt.legend()
-
   plt.show()
   plt.savefig((str(Player.name) + 'Pitches.png'))
   plt.clf()
