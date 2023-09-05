@@ -47,6 +47,11 @@ def writePitcherData(player):
     return(pitcherString)
       #print(str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
 
+def formatHTML(string):
+  """Replace newline characters with breaks to format according to HTML formats"""
+  return_string = string.replace("\n", "<br>")
+  return return_string
+
 def pltPitches(Player): 
   """Creates of a plot of all of the players given pitches plotted on a scatter plot with a zone and exported as a .png with the pitchers name"""
   xFast = []
@@ -221,7 +226,7 @@ def createHTML():
 
   html_template = "<html> \n<head> \n<title>Bucknell Baseball Data Sheet</title>"
   for players in pitchers:
-    html_template1 = str(html_template) + "<body> \n<p>" + str(writePitcherData(players)) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n</body>"
+    html_template1 = str(html_template) + "<body> \n<p>" + str(formatHTML(writePitcherData(players))) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n</body>"
     html_template = html_template1
   html_template1 = html_template + "\n</html>"
   f.write(html_template1)   
