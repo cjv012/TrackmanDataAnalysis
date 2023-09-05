@@ -183,7 +183,7 @@ def pltMovement(Player):
       elif pitch.ptype == "Sinker":
         xSink.append(float(pitch.hbreak))
         ySink.append(float(pitch.vbreak))
-      elif pitch.ptype == "TwoSeamFastball":
+      elif pitch.ptype == "TwoSeamFastBall":
         xTsea.append(float(pitch.hbreak))
         yTsea.append(float(pitch.vbreak))
       elif pitch.ptype == "Cutter":
