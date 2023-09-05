@@ -97,7 +97,7 @@ def pltPitches(Player):
       elif pitch.ptype == "Sinker":
         xSink.append(float(pitch.plside))
         ySink.append(float(pitch.plheight))
-      elif pitch.ptype == "TwoSeamFastball":
+      elif pitch.ptype == "TwoSeamFastBall":
         xTsea.append(float(pitch.plside))
         yTsea.append(float(pitch.plheight))
       elif pitch.ptype == "Cutter":
