@@ -221,7 +221,7 @@ def createHTML():
 
   html_template = "<html> \n<head> \n<title>Bucknell Baseball Data Sheet</title>"
   for players in pitchers:
-    html_template1 = str(html_template) + "<body> \n<h1>" + str(writePitcherData(players)) + "</h1> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n</body>"
+    html_template1 = str(html_template) + "<body> \n<p>" + str(writePitcherData(players)) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n</body>"
     html_template = html_template1
   html_template1 = html_template + "\n</html>"
   f.write(html_template1)   
