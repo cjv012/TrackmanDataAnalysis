@@ -39,12 +39,12 @@ readCSV("20230829-DepewField-Private-2_unverified.csv")
 readCSV("20230830-DepewField-Private-1_unverified.csv")
 readCSV("20230830-DepewField-Private-2_unverified.csv")
 
-def writePitcherData():
+def writePitcherData(player):
   """Writes the averages of all of the pitchers data to a text document"""
   with open('pitcherData.txt', 'w') as f:
-    for player in pitchers:
-      pitcherString = (str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
-      f.write(pitcherString)
+    pitcherString = (str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
+    f.write(pitcherString)
+    return(pitcherString)
       #print(str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
 
 def pltPitches(Player): 
@@ -208,15 +208,27 @@ def pltMovement(Player):
   fig.axhline(y=0, c="black")
   #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
   fig.title(str(Player.name) + "\'s Pitch Movement")
-  fig.xlim(-25, 25)
-  fig.ylim(-25, 25)
+  fig.xlim(-30, 30)
+  fig.ylim(-30, 30)
   fig.legend(fontsize = "8")
   fig.show()
   fig.savefig((str(Player.name) + 'Movement.png'))
   fig.clf()
 
 
+def createHTML():
+  f = open('BucknellBaseballPitcherData.html', 'w')
+
+  html_template = "<html> \n<head> \n<title>Bucknell Baseball Data Sheet</title>"
+  for players in pitchers:
+    html_template1 = str(html_template) + "<body> \n<h1>" + str(writePitcherData(players)) + "</h1> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n</body>"
+    html_template = html_template1
+  html_template1 = html_template + "\n</html>"
+  f.write(html_template1)   
+  f.close()
+
+createHTML()
 for players in pitchers:
   pltPitches(players)
   pltMovement(players)
-writePitcherData()
+  writePitcherData(players)
