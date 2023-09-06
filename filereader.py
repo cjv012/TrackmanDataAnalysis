@@ -1,14 +1,16 @@
 import matplotlib.pyplot as plt
 import matplotlib.pyplot as fig
+import matplotlib.pyplot as ax
 import csv
 from pitcher import Pitcher
 from pitch import Pitch
 import numpy as np
 import matplotlib.patches as mpatches
+import math
 
 def readPitch(arr):
   """Reads a line from the trackman csv and documents it as a pitch object"""
-  pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
+  pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[32], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
   return pitch
 
 
@@ -220,13 +222,99 @@ def pltMovement(Player):
   fig.savefig((str(Player.name) + 'Movement.png'))
   fig.clf()
 
+def pltSpin(Player): 
+  """Creates of a plot of all of the players given spins axis plotted on a scatter plot with a zone and exported as a .png with the pitchers name"""
+  FastAX = []
+  FastSpin = []
+
+  ChupAX = []
+  ChupSpin = []
+
+  SplitAX = []
+  SplitSpin = []
+
+  SlidAX = []
+  SlidSpin = []
+
+  CurvAX = []
+  CurvSpin = []
+
+  SinkAX = []
+  SinkSpin = []
+
+  TseaAX = []
+  TseaSpin = []
+
+  CuttAX = []
+  CuttSpin = []
+  fig = plt.figure()
+  ax = fig.add_subplot(projection='polar')
+  ax.set_theta_direction(-1)
+  ax.set_theta_offset(math.pi / 2.0)
+  for pitch in Player.pitches:
+      if pitch.ptype == "Fastball":        
+        FastAX.append(float(pitch.axis)*(math.pi/6))
+        FastSpin.append(float(pitch.spin))
+      elif pitch.ptype == "ChangeUp":
+        ChupAX.append(float(pitch.axis)*(math.pi/6))
+        ChupSpin.append(float(pitch.spin))
+      elif pitch.ptype == "Splitter":
+        SplitAX.append(float(pitch.axis)*(math.pi/6))
+        SplitSpin.append(float(pitch.spin))
+      elif pitch.ptype == "Slider":
+        SlidAX.append(float(pitch.axis)*(math.pi/6))
+        SlidSpin.append(float(pitch.spin))
+      elif pitch.ptype == "Curveball":
+        CurvAX.append(float(pitch.axis)*(math.pi/6))
+        CurvSpin.append(float(pitch.spin))
+      elif pitch.ptype == "Sinker":
+        SinkAX.append(float(pitch.axis)*(math.pi/6))
+        SinkSpin.append(float(pitch.spin))
+      elif pitch.ptype == "TwoSeamFastBall":
+        TseaAX.append(float(pitch.axis)*(math.pi/6))
+        TseaSpin.append(float(pitch.spin))
+      elif pitch.ptype == "Cutter":
+        CuttAX.append(float(pitch.axis)*(math.pi/6))
+        CuttSpin.append(float(pitch.spin))
+  if len(FastAX) != 0:
+    ax.scatter(FastAX, FastSpin, label= "Fastballs", c= "blue", marker= ".")
+  if len(ChupAX) != 0:
+    ax.scatter(ChupAX, ChupSpin, label= "Changeups", c= "red", marker= ".")
+  if len(SplitAX) != 0:
+    ax.scatter(SplitAX, SplitSpin, label= "Splitters", c= "green", marker= ".")
+  if len(SlidAX) != 0:
+    ax.scatter(SlidAX, SlidSpin, label= "Sliders", c= "orange", marker= ".")
+  if len(CurvAX) != 0:
+    ax.scatter(CurvAX, CurvSpin, label= "Curveballs", c= "purple", marker= ".")
+  if len(CuttAX) != 0:
+    ax.scatter(CuttAX, CuttSpin, label= "Cutters", c= "yellow", marker= ".")
+  if len(SinkAX) != 0:
+    ax.scatter(SinkAX, SinkSpin, label= "Sinkers", c= "pink", marker= ".")
+  if len(TseaAX) != 0:
+    ax.scatter(TseaAX, TseaSpin, label= "TwoSeams", c= "brown", marker= ".")
+  #fig, ax = plt.subplots()  
+
+  #fig.xlabel('Horizontal Break (in)')
+
+  #fig.ylabel('Vertical Break (in)')
+  #fig.axvline(x=0, c="black")
+  #fig.axhline(y=0, c="black")
+  #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
+  plt.title(str(Player.name) + "\'s Spin Axis")
+  #fig.xlim(-30, 30)
+  plt.ylim(0, 3000)
+  leg = plt.legend()
+  ax.legend_ = None
+  plt.show()
+  plt.savefig((str(Player.name) + 'Spin.png'))
+  plt.clf()
 
 def createHTML():
   f = open('BucknellBaseballPitcherData.html', 'w')
 
   html_template = "<html> \n<head> \n<title>Bucknell Baseball Data Sheet</title>"
   for players in pitchers:
-    html_template1 = str(html_template) + "<body> \n<p>" + str(formatHTML(writePitcherData(players))) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n</body>"
+    html_template1 = str(html_template) + "<body> \n<p>" + str(formatHTML(writePitcherData(players))) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n<img src=\"" + str(players.name) + "Spin.png\" alt=\"PNG Image\">\n</body>"
     html_template = html_template1
   html_template1 = html_template + "\n</html>"
   f.write(html_template1)   
@@ -236,4 +324,5 @@ createHTML()
 for players in pitchers:
   pltPitches(players)
   pltMovement(players)
+  pltSpin(players)
   writePitcherData(players)

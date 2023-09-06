@@ -1,6 +1,6 @@
 class Pitch: 
     """Class to store pitch objects and the various metrics atrributable to each pitch"""
-    def __init__(self, date, ptype, velocity, outcome, spin, vbreak, hbreak, axis, rheight, rside, extension, plheight, plside):
+    def __init__(self, date, ptype, velocity, outcome, spin, vbreak, hbreak, degrees, axis, rheight, rside, extension, plheight, plside):
         """Constructor for each pitch type: Takes in the data and stores it to the pitch"""
         self.date = date
         self.ptype = ptype
@@ -9,7 +9,8 @@ class Pitch:
         self.spin = spin
         self.vbreak = vbreak
         self.hbreak = hbreak
-        self.axis = axis
+        self.degrees = degrees
+        self.axis = axis.replace(":", ".")
         self.rheight = rheight
         self.rside = rside
         self.extension = extension
