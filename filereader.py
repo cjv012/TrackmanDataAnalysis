@@ -310,12 +310,94 @@ def pltSpin(Player):
   plt.savefig((str(Player.name) + 'Spin.png'))
   plt.clf()
 
+def pltRelease(Player): 
+  """Creates of a plot of all of the players given pitches plotted on a scatter plot with a zone and exported as a .png with the pitchers name"""
+  xFast = []
+  yFast = []
+
+  xChup = []
+  yChup = []
+
+  xSplit = []
+  ySplit = []
+
+  xSlid = []
+  ySlid = []
+
+  xCurv = []
+  yCurv = []
+
+  xSink = []
+  ySink = []
+
+  xTsea = []
+  yTsea = []
+
+  xCutt = []
+  yCutt = []
+
+  for pitch in Player.pitches:
+      if pitch.ptype == "Fastball":
+        xFast.append(float(pitch.rside))
+        yFast.append(float(pitch.rheight))
+      elif pitch.ptype == "ChangeUp":
+        xChup.append(float(pitch.rside))
+        yChup.append(float(pitch.rheight))
+      elif pitch.ptype == "Splitter":
+        xSplit.append(float(pitch.rside))
+        ySplit.append(float(pitch.rheight))
+      elif pitch.ptype == "Slider":
+        xSlid.append(float(pitch.rside))
+        ySlid.append(float(pitch.rheight))
+      elif pitch.ptype == "Curveball":
+        xCurv.append(float(pitch.rside))
+        yCurv.append(float(pitch.rheight))
+      elif pitch.ptype == "Sinker":
+        xSink.append(float(pitch.rside))
+        ySink.append(float(pitch.rheight))
+      elif pitch.ptype == "TwoSeamFastBall":
+        xTsea.append(float(pitch.rside))
+        yTsea.append(float(pitch.rheight))
+      elif pitch.ptype == "Cutter":
+        xCutt.append(float(pitch.rside))
+        yCutt.append(float(pitch.rheight))
+
+  if len(xFast) != 0:
+    plt.scatter(xFast, yFast, label= "Fastballs", c= "blue", marker= ".")
+  if len(xChup) != 0:
+    plt.scatter(xChup, yChup, label= "Changeups", c= "red", marker= ".")
+  if len(xSplit) != 0:
+    plt.scatter(xSplit, ySplit, label= "Splitters", c= "green", marker= ".")
+  if len(xSlid) != 0:
+    plt.scatter(xSlid, ySlid, label= "Sliders", c= "orange", marker= ".")
+  if len(xCurv) != 0:
+    plt.scatter(xCurv, yCurv, label= "Curveballs", c= "purple", marker= ".")
+  if len(xCutt) != 0:
+    plt.scatter(xCutt, yCutt, label= "Cutters", c= "yellow", marker= ".")
+  if len(xSink) != 0:
+    plt.scatter(xSink, ySink, label= "Sinkers", c= "pink", marker= ".")
+  if len(xTsea) != 0:
+    plt.scatter(xTsea, yTsea, label= "TwoSeams", c= "brown", marker= ".")
+  #fig, ax = plt.subplots()   
+  plt.xlabel('Release Side (ft)')
+
+  plt.ylabel('Release Height (ft)')
+
+  #ax.add_patch(Rectangle((1, 1), -1, 1, edgecolor = 'blue', facecolor = 'blue', fill=False, lw=5))
+  plt.title(str(Player.name) + "\'s Pitch Release")
+  plt.xlim(-4, 4)
+  plt.ylim(0, 7)
+  plt.legend(fontsize = "8")
+  plt.show()
+  plt.savefig((str(Player.name) + 'Release.png'))
+  plt.clf()
+
 def createHTML():
   f = open('BucknellBaseballPitcherData.html', 'w')
 
   html_template = "<html> \n<head> \n<title>Bucknell Baseball Data Sheet</title>"
   for players in pitchers:
-    html_template1 = str(html_template) + "<body> \n<p>" + str(formatHTML(writePitcherData(players))) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n<img src=\"" + str(players.name) + "Spin.png\" alt=\"PNG Image\">\n</body>"
+    html_template1 = str(html_template) + "<body> \n<p>" + str(formatHTML(writePitcherData(players))) + "</p> \n<img src=\"" + str(players.name) + "Pitches.png\" alt=\"PNG Image\"> \n<img src=\"" + str(players.name) + "Movement.png\" alt=\"PNG Image\">\n<img src=\"" + str(players.name) + "Spin.png\" alt=\"PNG Image\">\n<img src=\"" + str(players.name) + "Release.png\" alt=\"PNG Image\">\n</body>"
     html_template = html_template1
   html_template1 = html_template + "\n</html>"
   f.write(html_template1)   
@@ -326,4 +408,5 @@ for players in pitchers:
   pltPitches(players)
   pltMovement(players)
   pltSpin(players)
+  pltRelease(players)
   writePitcherData(players)
