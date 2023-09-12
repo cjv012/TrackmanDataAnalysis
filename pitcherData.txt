@@ -5,7 +5,7 @@ Max Fastball Velocity: 88.4
 Average Fastball Spin Rate: 2274.2
 Average Fastball Vertical Break: 10.9
 Average Fastball Horizontal Break: -0.3
-Fastball Strike Percentage: 31.2%
+Fastball Strike Percentage: 75.0%
 
 
 
