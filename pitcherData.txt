@@ -1,23 +1,14 @@
-Pavone, Dante
-Fastballs Thrown: 17
-Average Fastball Velocity: 86.1
-Average Fastball Spin Rate: 2156.4
-Average Fastball Vertical Break: 11.1
-Average Fastball Horizontal Break: 6.7
-Fastball Strike Percentage: 47.1%
-Changeups Thrown: 6
-Average Changeup Velocity: 80.0
-Average Changeup Spin Rate: 1891.4
-Average Changeup Vertical Break: 3.0
-Average Changeup Horizontal Break: 15.9
-Changeup Strike Percentage: 0.0%
+adelmann, jon
+Fastballs Thrown: 16
+Average Fastball Velocity: 87.4
+Max Fastball Velocity: 88.4
+Average Fastball Spin Rate: 2274.2
+Average Fastball Vertical Break: 10.9
+Average Fastball Horizontal Break: -0.3
+Fastball Strike Percentage: 31.2%
 
-Sliders Thrown: 8
-Average Slider Velocity: 76.1
-Average Slider Spin Rate: 2258.6
-Average Slider Vertical Break: -3.6
-Average Slider Horizontal Break: -16.6
-Slider Strike Percentage: 12.5%
+
+
 
 
 

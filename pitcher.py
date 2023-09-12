@@ -25,8 +25,11 @@ class Pitcher:
         totStrike = 0
         totVBreak = 0
         totHBreak = 0
+        maxFast = 0
         for pitch in self.pitches:
             if pitch.ptype == "Fastball":
+                if float(pitch.velocity) > maxFast:
+                    maxFast = float(pitch.velocity)
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
@@ -35,7 +38,7 @@ class Pitcher:
                 if pitch.outcome == "StrikeCalled":
                     totStrike += 1
         if (numPitches > 0): 
-            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Average Fastball Vertical Break: " + str(round((totVBreak/numPitches), 1)) + "\n" + "Average Fastball Horizontal Break: " + str(round((totHBreak/numPitches), 1)) + "\n" "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
+            return("Fastballs Thrown: " + str(numPitches) + "\n" + "Average Fastball Velocity: " + str(round((totVelo/numPitches), 1)) + "\n" + "Max Fastball Velocity: " + str(round((maxFast), 1)) + "\n" + "Average Fastball Spin Rate: " + str(round((totSpin/numPitches), 1)) + "\n" + "Average Fastball Vertical Break: " + str(round((totVBreak/numPitches), 1)) + "\n" + "Average Fastball Horizontal Break: " + str(round((totHBreak/numPitches), 1)) + "\n" "Fastball Strike Percentage: " + str(round(((totStrike/numPitches) * 100), 1)) + "%")
         else:
             return ""
         
