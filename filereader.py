@@ -8,6 +8,16 @@ import numpy as np
 import matplotlib.patches as mpatches
 import math
 
+def compDates(beginDate, date, endDate):
+  """Returns 1 if date is in the date range and 0 if it is not"""
+  if int(beginDate[0]) == int(date[0]):
+    if int(beginDate[1]) == int(date[1]):
+      if int(beginDate[2]) == int(date[2]):
+        return 1
+  else:
+    return 0
+
+
 def readPitch(arr):
   """Reads a line from the trackman csv and documents it as a pitch object"""
   pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[32], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
@@ -403,10 +413,14 @@ def createHTML():
   f.write(html_template1)   
   f.close()
 
-createHTML()
-for players in pitchers:
-  pltPitches(players)
-  pltMovement(players)
-  pltSpin(players)
-  pltRelease(players)
-  writePitcherData(players)
+def createPortal(beginDate, endDate):
+  createHTML()
+  for players in pitchers:
+    pltPitches(players)
+    pltMovement(players)
+    pltSpin(players)
+    pltRelease(players)
+    writePitcherData(players)
+
+createPortal(10, 10)
+
