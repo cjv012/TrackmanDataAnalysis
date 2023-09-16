@@ -35,14 +35,15 @@ def readCSV(csvfileString):
       nameIn = 1
       pitcherLoc = 0
       for x in range(len(pitchers)):
-        if pitchers[x].name == row[5]:
-          nameIn = 0
-          pitcherLoc = x
-      if (nameIn == 1) and (i != 0):
+        if len(row) != 0:
+          if pitchers[x].name == row[5]:
+            nameIn = 0
+            pitcherLoc = x
+      if (nameIn == 1) and (i != 0) and (len(row) != 0):
         thrower = Pitcher(row[5], row[7])
         pitchers.append(thrower)
         pitcherLoc = len(pitchers) - 1
-      if (i != 0):
+      if (i != 0) and (len(row) != 0):
         pitchers[pitcherLoc].insertPitch(readPitch(row))
         
       i += 1
@@ -51,6 +52,7 @@ readCSV("20230829-DepewField-Private-2_unverified.csv")
 readCSV("20230830-DepewField-Private-1_unverified.csv")
 readCSV("20230830-DepewField-Private-2_unverified.csv")
 readCSV("20230909-DepewField-Private-1_unverified.csv")
+readCSV("20230916-DepewField-Private-2_unverified.csv")
 
 def writePitcherData(player):
   """Writes the averages of all of the pitchers data to a text document"""
