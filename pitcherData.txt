@@ -1,25 +1,25 @@
-O'Malley, John
-Fastballs Thrown: 13
-Average Fastball Velocity: 92.6
-Max Fastball Velocity: 94.6
-Average Fastball Spin Rate: 2257.1
-Average Fastball Vertical Break: 19.4
-Average Fastball Horizontal Break: 10.6
-Fastball Strike Percentage: 46.2%
+Pavone, Dante
+Fastballs Thrown: 15
+Average Fastball Velocity: 87.7
+Max Fastball Velocity: 89.6
+Average Fastball Spin Rate: 2190.9
+Average Fastball Vertical Break: 11.7
+Average Fastball Horizontal Break: 15.5
+Fastball Strike Percentage: 60.0%
+Changeups Thrown: 2
+Average Changeup Velocity: 78.7
+Average Changeup Spin Rate: 1884.5
+Average Changeup Vertical Break: 8.2
+Average Changeup Horizontal Break: 16.2
+Changeup Strike Percentage: 50.0%
 
-
-Sliders Thrown: 3
-Average Slider Velocity: 78.7
-Average Slider Spin Rate: 1829.7
-Average Slider Vertical Break: -2.1
-Average Slider Horizontal Break: -1.8
+Sliders Thrown: 9
+Average Slider Velocity: 77.1
+Average Slider Spin Rate: 2341.6
+Average Slider Vertical Break: -2.4
+Average Slider Horizontal Break: -11.5
 Slider Strike Percentage: 33.3%
-Splitters Thrown: 1
-Average Splitter Velocity: 82.5
-Average Splitter Spin Rate: 1071.4
-Average Splitter Vertical Break: 5.5
-Average Splitter Horizontal Break: 13.0
-Splitter Strike Percentage: 0.0%
+
 
 
 
