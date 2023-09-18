@@ -1,15 +1,25 @@
-adelmann, jon
-Fastballs Thrown: 16
-Average Fastball Velocity: 87.4
-Max Fastball Velocity: 88.4
-Average Fastball Spin Rate: 2274.2
-Average Fastball Vertical Break: 10.9
-Average Fastball Horizontal Break: -0.3
-Fastball Strike Percentage: 75.0%
+O'Malley, John
+Fastballs Thrown: 13
+Average Fastball Velocity: 92.6
+Max Fastball Velocity: 94.6
+Average Fastball Spin Rate: 2257.1
+Average Fastball Vertical Break: 19.4
+Average Fastball Horizontal Break: 10.6
+Fastball Strike Percentage: 46.2%
 
 
-
-
+Sliders Thrown: 3
+Average Slider Velocity: 78.7
+Average Slider Spin Rate: 1829.7
+Average Slider Vertical Break: -2.1
+Average Slider Horizontal Break: -1.8
+Slider Strike Percentage: 33.3%
+Splitters Thrown: 1
+Average Splitter Velocity: 82.5
+Average Splitter Spin Rate: 1071.4
+Average Splitter Vertical Break: 5.5
+Average Splitter Horizontal Break: 13.0
+Splitter Strike Percentage: 0.0%
 
 
 

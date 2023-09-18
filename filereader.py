@@ -53,6 +53,7 @@ readCSV("20230830-DepewField-Private-1_unverified.csv")
 readCSV("20230830-DepewField-Private-2_unverified.csv")
 readCSV("20230909-DepewField-Private-1_unverified.csv")
 readCSV("20230916-DepewField-Private-2_unverified.csv")
+readCSV("20230917-DepewField-Private-1_unverified.csv")
 
 def writePitcherData(player):
   """Writes the averages of all of the pitchers data to a text document"""
