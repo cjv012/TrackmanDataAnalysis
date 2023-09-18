@@ -36,7 +36,7 @@ def readCSV(csvfileString):
       pitcherLoc = 0
       for x in range(len(pitchers)):
         if len(row) != 0:
-          if pitchers[x].name == row[5]:
+          if pitchers[x].name.upper() == row[5].upper():
             nameIn = 0
             pitcherLoc = x
       if (nameIn == 1) and (i != 0) and (len(row) != 0):
@@ -48,10 +48,10 @@ def readCSV(csvfileString):
         
       i += 1
 
-#readCSV("20230829-DepewField-Private-2_unverified.csv")
-#readCSV("20230830-DepewField-Private-1_unverified.csv")
-#readCSV("20230830-DepewField-Private-2_unverified.csv")
-#readCSV("20230909-DepewField-Private-1_unverified.csv")
+readCSV("20230829-DepewField-Private-2_unverified.csv")
+readCSV("20230830-DepewField-Private-1_unverified.csv")
+readCSV("20230830-DepewField-Private-2_unverified.csv")
+readCSV("20230909-DepewField-Private-1_unverified.csv")
 readCSV("20230916-DepewField-Private-2_unverified.csv")
 readCSV("20230917-DepewField-Private-1_unverified.csv")
 
