@@ -4,6 +4,8 @@ import matplotlib.pyplot as ax
 import csv
 from pitcher import Pitcher
 from pitch import Pitch
+from hitter import Hitter
+from hit import Hit
 import numpy as np
 import matplotlib.patches as mpatches
 import math
@@ -23,8 +25,17 @@ def readPitch(arr):
   pitch = Pitch(arr[1], arr[19], arr[28], arr[21], arr[31], arr[38], arr[39], arr[32], arr[33], arr[34], arr[35], arr[35], arr[40], arr[41])
   return pitch
 
+def readHit(arr):
+  """Reads a line from the trackman csv and documents it as a pitch object"""
+  if arr[21] == "InPlay":
+    hit = Hit(arr[1], arr[47], arr[19], arr[46], arr[24], arr[53])
+  else:
+    hit = None
+  return hit
+
 
 pitchers = []
+hitters = []
 
 def readCSV(csvfileString):
   """Opens a CSV file and reads in the rows and attributes each pitch to a pitcher that is placed in the picher array as a pitcher object"""
@@ -32,19 +43,37 @@ def readCSV(csvfileString):
     csvreader = csv.reader(file)
     i = 0
     for row in csvreader:
-      nameIn = 1
+      PnameIn = 1
+      HnameIn = 1
       pitcherLoc = 0
-      for x in range(len(pitchers)):
+      hitterLoc = 0
+      maxLen = 0
+      if len(pitchers) > len(hitters):
+        maxLen = len(pitchers)
+      else:
+        maxLen = len(hitters)
+      for x in range(maxLen):
         if len(row) != 0:
-          if pitchers[x].name.upper() == row[5].upper():
-            nameIn = 0
-            pitcherLoc = x
-      if (nameIn == 1) and (i != 0) and (len(row) != 0):
+          if x < len(pitchers):
+            if pitchers[x].name.upper() == row[5].upper():
+              PnameIn = 0
+              pitcherLoc = x
+          if x < len(hitters):
+            if hitters[x].name.upper() == row[9].upper():
+              hitterLoc = x
+              HnameIn = 0
+      if (PnameIn == 1) and (i != 0) and (len(row) != 0):
         thrower = Pitcher(row[5], row[7])
         pitchers.append(thrower)
         pitcherLoc = len(pitchers) - 1
+      if (HnameIn == 1) and (i != 0) and (len(row) != 0):
+        batter = Hitter(row[9], row[7])
+        hitters.append(batter)
+        hitterLoc = len(pitchers) - 1
       if (i != 0) and (len(row) != 0):
         pitchers[pitcherLoc].insertPitch(readPitch(row))
+        if readHit(row) != None:
+          hitters[hitterLoc].insertHit(readHit(row))
         
       i += 1
 
@@ -62,6 +91,12 @@ def writePitcherData(player):
     f.write(pitcherString)
     return(pitcherString)
       #print(str(player) + "\n" + str(player.avgFastball()) + "\n" + str(player.avgChangeup()) + "\n"+ str(player.avgCurveball()) + "\n"+ str(player.avgSlider()) + "\n"+ str(player.avgSplitter()) + "\n" + str(player.avgCutter()) + "\n" + str(player.avgSinker()) + "\n" + str(player.avgTwoSeam()) + "\n")
+
+def writeHitterData(hitter):
+  with open('hitterData.txt', 'w') as f:
+    hitterString = (str(hitter))
+    f.write(hitterString)
+    return hitterString
 
 def formatHTML(string):
   """Replace newline characters with breaks to format according to HTML formats"""
@@ -427,3 +462,5 @@ def createPortal(beginDate, endDate):
 
 createPortal(10, 10)
 
+for batter in hitters:
+  writeHitterData(batter)
