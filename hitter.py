@@ -33,7 +33,10 @@ class Hitter:
                 averageLA += float(hits.angle)
             else:
                 totalHits -= 1
-        return round((averageLA/totalHits), 2)
+        if totalHits == 0:
+            return 0
+        else:
+            return round((averageLA/totalHits), 2)
 
 
     def avgEV(self):
@@ -44,7 +47,10 @@ class Hitter:
                 averageEV += float(hits.eVelocity)
             else:
                 totalHits -= 1
-        return round((averageEV/totalHits), 2)
+        if totalHits == 0:
+            return 0
+        else:
+            return round((averageEV/totalHits), 2)
 
     def overHundred(self):
         totHundy = 0
@@ -84,13 +90,19 @@ class Hitter:
         missFast = self.swingFast
         totFast = self.swingFast
         for hit in self.hits:
-            if hit.pType:
+            if hit.pType == "Fastball":
                 totFast += 1
-        return round((missFast/totFast), 2)
+        if totFast == 0:
+            return 0
+        else:
+            return round((missFast/totFast), 2)
 
     def swingMiss(self):
         swingMiss = self.swingAndMiss
         totSwing = len(self.hits) + swingMiss
-        return round((swingMiss/totSwing), 2)
+        if totSwing == 0:
+            return 0
+        else:
+            return round((swingMiss/totSwing), 2)
         
 

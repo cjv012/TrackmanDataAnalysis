@@ -467,3 +467,6 @@ createPortal(10, 10)
 
 for batter in hitters:
   writeHitterData(batter)
+  print(batter.name)
+  print(batter.swingMissFast())
+  print(batter.avgLA())
