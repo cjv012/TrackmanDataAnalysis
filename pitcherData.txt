@@ -14,7 +14,7 @@ Average Slider Velocity: 78.7
 Average Slider Spin Rate: 1829.7
 Average Slider Vertical Break: -2.1
 Average Slider Horizontal Break: -1.8
-Slider Strike Percentage: 100.0%
+Slider Strike Percentage: 33.3%
 Splitters Thrown: 1
 Average Splitter Velocity: 82.5
 Average Splitter Spin Rate: 1071.4
