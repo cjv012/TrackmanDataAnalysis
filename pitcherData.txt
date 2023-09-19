@@ -1,4 +1,5 @@
 O'Malley, John
+Total Strike Percentage: 41.18%
 Fastballs Thrown: 13
 Average Fastball Velocity: 92.6
 Max Fastball Velocity: 94.6
@@ -13,7 +14,7 @@ Average Slider Velocity: 78.7
 Average Slider Spin Rate: 1829.7
 Average Slider Vertical Break: -2.1
 Average Slider Horizontal Break: -1.8
-Slider Strike Percentage: 33.3%
+Slider Strike Percentage: 100.0%
 Splitters Thrown: 1
 Average Splitter Velocity: 82.5
 Average Splitter Spin Rate: 1071.4
