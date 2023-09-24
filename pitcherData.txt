@@ -1,26 +1,21 @@
-O'Malley, John
-Total Strike Percentage: 41.18%
-Fastballs Thrown: 13
-Average Fastball Velocity: 92.6
-Max Fastball Velocity: 94.6
-Average Fastball Spin Rate: 2257.1
-Average Fastball Vertical Break: 19.4
-Average Fastball Horizontal Break: 10.6
-Fastball Strike Percentage: 46.2%
+Carroll, Graeme
+Total Strike Percentage: 61.54%
+Fastballs Thrown: 10
+Average Fastball Velocity: 78.2
+Max Fastball Velocity: 79.9
+Average Fastball Spin Rate: 2012.9
+Average Fastball Vertical Break: -3.2
+Average Fastball Horizontal Break: 17.4
+Fastball Strike Percentage: 60.0%
 
 
 Sliders Thrown: 3
-Average Slider Velocity: 78.7
-Average Slider Spin Rate: 1829.7
-Average Slider Vertical Break: -2.1
-Average Slider Horizontal Break: -1.8
-Slider Strike Percentage: 33.3%
-Splitters Thrown: 1
-Average Splitter Velocity: 82.5
-Average Splitter Spin Rate: 1071.4
-Average Splitter Vertical Break: 5.5
-Average Splitter Horizontal Break: 13.0
-Splitter Strike Percentage: 0.0%
+Average Slider Velocity: 73.1
+Average Slider Spin Rate: 2148.6
+Average Slider Vertical Break: 5.3
+Average Slider Horizontal Break: -8.5
+Slider Strike Percentage: 66.7%
+
 
 
 

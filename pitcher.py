@@ -45,8 +45,12 @@ class Pitcher:
                 strikePitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -70,8 +74,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -95,8 +103,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -120,8 +132,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -145,8 +161,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -170,8 +190,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -195,8 +219,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -220,8 +248,12 @@ class Pitcher:
                 numPitches += 1
                 totVelo += float(pitch.velocity)
                 totSpin += float(pitch.spin)
-                totVBreak += float(pitch.vbreak)
-                totHBreak += float(pitch.hbreak)
+                if pitch.vbreak == "" or pitch.hbreak == "":
+                    totHBreak += float(totHBreak)/numPitches
+                    totVBreak += float(totVBreak)/numPitches
+                else:
+                    totVBreak += float(pitch.vbreak)
+                    totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":

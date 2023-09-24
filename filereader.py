@@ -86,6 +86,8 @@ readCSV("20230830-DepewField-Private-2_unverified.csv")
 readCSV("20230909-DepewField-Private-1_unverified.csv")
 readCSV("20230916-DepewField-Private-2_unverified.csv")
 readCSV("20230917-DepewField-Private-1_unverified.csv")
+readCSV("20230922-DepewField-Private-1_unverified.csv")
+readCSV("20230923-DepewField-Private-2_unverified.csv")
 
 def writePitcherData(player):
   """Writes the averages of all of the pitchers data to a text document"""
@@ -133,28 +135,28 @@ def pltPitches(Player):
   yCutt = []
 
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball":
+      if pitch.ptype == "Fastball" and pitch.plside != "":
         xFast.append(float(pitch.plside))
         yFast.append(float(pitch.plheight))
-      elif pitch.ptype == "ChangeUp":
+      elif pitch.ptype == "ChangeUp" and pitch.plside != "":
         xChup.append(float(pitch.plside))
         yChup.append(float(pitch.plheight))
-      elif pitch.ptype == "Splitter":
+      elif pitch.ptype == "Splitter" and pitch.plside != "":
         xSplit.append(float(pitch.plside))
         ySplit.append(float(pitch.plheight))
-      elif pitch.ptype == "Slider":
+      elif pitch.ptype == "Slider" and pitch.plside != "":
         xSlid.append(float(pitch.plside))
         ySlid.append(float(pitch.plheight))
-      elif pitch.ptype == "Curveball":
+      elif pitch.ptype == "Curveball" and pitch.plside != "":
         xCurv.append(float(pitch.plside))
         yCurv.append(float(pitch.plheight))
-      elif pitch.ptype == "Sinker":
+      elif pitch.ptype == "Sinker" and pitch.plside != "":
         xSink.append(float(pitch.plside))
         ySink.append(float(pitch.plheight))
-      elif pitch.ptype == "TwoSeamFastBall":
+      elif pitch.ptype == "TwoSeamFastBall" and pitch.plside != "":
         xTsea.append(float(pitch.plside))
         yTsea.append(float(pitch.plheight))
-      elif pitch.ptype == "Cutter":
+      elif pitch.ptype == "Cutter" and pitch.plside != "":
         xCutt.append(float(pitch.plside))
         yCutt.append(float(pitch.plheight))
 
@@ -219,28 +221,28 @@ def pltMovement(Player):
   yCutt = []
 
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball":
+      if pitch.ptype == "Fastball" and pitch.hbreak != "":
         xFast.append(float(pitch.hbreak))
         yFast.append(float(pitch.vbreak))
-      elif pitch.ptype == "ChangeUp":
+      elif pitch.ptype == "ChangeUp" and pitch.hbreak != "":
         xChup.append(float(pitch.hbreak))
         yChup.append(float(pitch.vbreak))
-      elif pitch.ptype == "Splitter":
+      elif pitch.ptype == "Splitter" and pitch.hbreak != "":
         xSplit.append(float(pitch.hbreak))
         ySplit.append(float(pitch.vbreak))
-      elif pitch.ptype == "Slider":
+      elif pitch.ptype == "Slider" and pitch.hbreak != "":
         xSlid.append(float(pitch.hbreak))
         ySlid.append(float(pitch.vbreak))
-      elif pitch.ptype == "Curveball":
+      elif pitch.ptype == "Curveball" and pitch.hbreak != "":
         xCurv.append(float(pitch.hbreak))
         yCurv.append(float(pitch.vbreak))
-      elif pitch.ptype == "Sinker":
+      elif pitch.ptype == "Sinker" and pitch.hbreak != "":
         xSink.append(float(pitch.hbreak))
         ySink.append(float(pitch.vbreak))
-      elif pitch.ptype == "TwoSeamFastBall":
+      elif pitch.ptype == "TwoSeamFastBall" and pitch.hbreak != "":
         xTsea.append(float(pitch.hbreak))
         yTsea.append(float(pitch.vbreak))
-      elif pitch.ptype == "Cutter":
+      elif pitch.ptype == "Cutter" and pitch.hbreak != "":
         xCutt.append(float(pitch.hbreak))
         yCutt.append(float(pitch.vbreak))
   if len(xFast) != 0:
@@ -304,28 +306,28 @@ def pltSpin(Player):
   ax.set_theta_direction(-1)
   ax.set_theta_offset(math.pi / 2.0)
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball":        
+      if pitch.ptype == "Fastball" and pitch.axis != "":        
         FastAX.append(float(pitch.axis)*(math.pi/6))
         FastSpin.append(float(pitch.spin))
-      elif pitch.ptype == "ChangeUp":
+      elif pitch.ptype == "ChangeUp" and pitch.axis != "":
         ChupAX.append(float(pitch.axis)*(math.pi/6))
         ChupSpin.append(float(pitch.spin))
-      elif pitch.ptype == "Splitter":
+      elif pitch.ptype == "Splitter" and pitch.axis != "":
         SplitAX.append(float(pitch.axis)*(math.pi/6))
         SplitSpin.append(float(pitch.spin))
-      elif pitch.ptype == "Slider":
+      elif pitch.ptype == "Slider" and pitch.axis != "":
         SlidAX.append(float(pitch.axis)*(math.pi/6))
         SlidSpin.append(float(pitch.spin))
-      elif pitch.ptype == "Curveball":
+      elif pitch.ptype == "Curveball" and pitch.axis != "":
         CurvAX.append(float(pitch.axis)*(math.pi/6))
         CurvSpin.append(float(pitch.spin))
-      elif pitch.ptype == "Sinker":
+      elif pitch.ptype == "Sinker" and pitch.axis != "":
         SinkAX.append(float(pitch.axis)*(math.pi/6))
         SinkSpin.append(float(pitch.spin))
-      elif pitch.ptype == "TwoSeamFastBall":
+      elif pitch.ptype == "TwoSeamFastBall" and pitch.axis != "":
         TseaAX.append(float(pitch.axis)*(math.pi/6))
         TseaSpin.append(float(pitch.spin))
-      elif pitch.ptype == "Cutter":
+      elif pitch.ptype == "Cutter" and pitch.axis != "":
         CuttAX.append(float(pitch.axis)*(math.pi/6))
         CuttSpin.append(float(pitch.spin))
   if len(FastAX) != 0:
@@ -388,28 +390,28 @@ def pltRelease(Player):
   yCutt = []
 
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball":
+      if pitch.ptype == "Fastball" and pitch.rside != "":
         xFast.append(float(pitch.rside))
         yFast.append(float(pitch.rheight))
-      elif pitch.ptype == "ChangeUp":
+      elif pitch.ptype == "ChangeUp" and pitch.rside != "":
         xChup.append(float(pitch.rside))
         yChup.append(float(pitch.rheight))
-      elif pitch.ptype == "Splitter":
+      elif pitch.ptype == "Splitter" and pitch.rside != "":
         xSplit.append(float(pitch.rside))
         ySplit.append(float(pitch.rheight))
-      elif pitch.ptype == "Slider":
+      elif pitch.ptype == "Slider" and pitch.rside != "":
         xSlid.append(float(pitch.rside))
         ySlid.append(float(pitch.rheight))
-      elif pitch.ptype == "Curveball":
+      elif pitch.ptype == "Curveball" and pitch.rside != "":
         xCurv.append(float(pitch.rside))
         yCurv.append(float(pitch.rheight))
-      elif pitch.ptype == "Sinker":
+      elif pitch.ptype == "Sinker" and pitch.rside != "":
         xSink.append(float(pitch.rside))
         ySink.append(float(pitch.rheight))
-      elif pitch.ptype == "TwoSeamFastBall":
+      elif pitch.ptype == "TwoSeamFastBall" and pitch.rside != "":
         xTsea.append(float(pitch.rside))
         yTsea.append(float(pitch.rheight))
-      elif pitch.ptype == "Cutter":
+      elif pitch.ptype == "Cutter" and pitch.rside != "":
         xCutt.append(float(pitch.rside))
         yCutt.append(float(pitch.rheight))
 
@@ -465,8 +467,8 @@ def createPortal(beginDate, endDate):
 
 createPortal(10, 10)
 
-for batter in hitters:
+"""for batter in hitters:
   writeHitterData(batter)
   print(batter.name)
   print(batter.swingMissFast())
-  print(batter.avgLA())
+  print(batter.avgLA())"""
