@@ -38,7 +38,7 @@ class Pitcher:
         maxFast = 0
         strikePitches = 0
         for pitch in self.pitches:
-            if pitch.ptype == "Fastball":
+            if (pitch.ptype == "Fastball" or pitch.ptype == "FourSeamFastBall"):
                 if float(pitch.velocity) > maxFast:
                     maxFast = float(pitch.velocity)
                 numPitches += 1

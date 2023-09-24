@@ -135,7 +135,7 @@ def pltPitches(Player):
   yCutt = []
 
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball" and pitch.plside != "":
+      if (pitch.ptype == "Fastball" or pitch.ptype == "FourSeamFastBall") and pitch.plside != "":
         xFast.append(float(pitch.plside))
         yFast.append(float(pitch.plheight))
       elif pitch.ptype == "ChangeUp" and pitch.plside != "":
@@ -221,7 +221,7 @@ def pltMovement(Player):
   yCutt = []
 
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball" and pitch.hbreak != "":
+      if (pitch.ptype == "Fastball" or pitch.ptype == "FourSeamFastBall") and pitch.hbreak != "":
         xFast.append(float(pitch.hbreak))
         yFast.append(float(pitch.vbreak))
       elif pitch.ptype == "ChangeUp" and pitch.hbreak != "":
@@ -306,7 +306,7 @@ def pltSpin(Player):
   ax.set_theta_direction(-1)
   ax.set_theta_offset(math.pi / 2.0)
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball" and pitch.axis != "":        
+      if (pitch.ptype == "Fastball" or pitch.ptype == "FourSeamFastBall") and pitch.axis != "":        
         FastAX.append(float(pitch.axis)*(math.pi/6))
         FastSpin.append(float(pitch.spin))
       elif pitch.ptype == "ChangeUp" and pitch.axis != "":
@@ -390,7 +390,7 @@ def pltRelease(Player):
   yCutt = []
 
   for pitch in Player.pitches:
-      if pitch.ptype == "Fastball" and pitch.rside != "":
+      if (pitch.ptype == "Fastball" or pitch.ptype == "FourSeamFastBall") and pitch.rside != "":
         xFast.append(float(pitch.rside))
         yFast.append(float(pitch.rheight))
       elif pitch.ptype == "ChangeUp" and pitch.rside != "":
