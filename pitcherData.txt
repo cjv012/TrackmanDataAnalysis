@@ -1,20 +1,25 @@
-Carroll, Graeme
-Total Strike Percentage: 60.42%
-Fastballs Thrown: 28
-Average Fastball Velocity: 79.8
-Max Fastball Velocity: 82.5
-Average Fastball Spin Rate: 1997.4
-Average Fastball Vertical Break: -2.6
-Average Fastball Horizontal Break: 15.6
-Fastball Strike Percentage: 60.7%
+Mulvey, Nick
+Total Strike Percentage: 62.5%
+Fastballs Thrown: 6
+Average Fastball Velocity: 90.8
+Max Fastball Velocity: 92.0
+Average Fastball Spin Rate: 2313.1
+Average Fastball Vertical Break: 9.7
+Average Fastball Horizontal Break: -12.3
+Fastball Strike Percentage: 66.7%
+Changeups Thrown: 1
+Average Changeup Velocity: 83.3
+Average Changeup Spin Rate: 1895.2
+Average Changeup Vertical Break: -2.0
+Average Changeup Horizontal Break: -12.0
+Changeup Strike Percentage: 0.0%
 
-
-Sliders Thrown: 20
-Average Slider Velocity: 74.1
-Average Slider Spin Rate: 2140.3
-Average Slider Vertical Break: 2.6
-Average Slider Horizontal Break: -6.7
-Slider Strike Percentage: 60.0%
+Sliders Thrown: 9
+Average Slider Velocity: 81.1
+Average Slider Spin Rate: 2625.7
+Average Slider Vertical Break: 0.4
+Average Slider Horizontal Break: 12.2
+Slider Strike Percentage: 66.7%
 
 
 
