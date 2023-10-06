@@ -1,6 +1,12 @@
 Carroll, Graeme
 Total Strike Percentage: 60.42%
-
+Fastballs Thrown: 28
+Average Fastball Velocity: 79.8
+Max Fastball Velocity: 82.5
+Average Fastball Spin Rate: 1997.4
+Average Fastball Vertical Break: -2.6
+Average Fastball Horizontal Break: 15.6
+Fastball Strike Percentage: 60.7%
 
 
 Sliders Thrown: 20

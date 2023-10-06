@@ -44,8 +44,6 @@ class Pitcher:
                     totSpin += float(totSpin)/numPitches
                     totHBreak += float(totHBreak)/numPitches
                     totVBreak += float(totVBreak)/numPitches
-                elif numPitches == 0:
-                    pass
                 else:
                     if float(pitch.velocity) > maxFast:
                         maxFast = float(pitch.velocity)
