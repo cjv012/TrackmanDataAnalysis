@@ -1,19 +1,14 @@
-Mulvey, Nick
-Total Strike Percentage: 62.5%
+Carroll, Graeme
+Total Strike Percentage: 60.42%
 
-Changeups Thrown: 1
-Average Changeup Velocity: 83.3
-Average Changeup Spin Rate: 1895.2
-Average Changeup Vertical Break: -2.0
-Average Changeup Horizontal Break: -12.0
-Changeup Strike Percentage: 0.0%
 
-Sliders Thrown: 9
-Average Slider Velocity: 81.1
-Average Slider Spin Rate: 2625.7
-Average Slider Vertical Break: 0.4
-Average Slider Horizontal Break: 12.2
-Slider Strike Percentage: 66.7%
+
+Sliders Thrown: 20
+Average Slider Velocity: 74.1
+Average Slider Spin Rate: 2140.3
+Average Slider Vertical Break: 2.6
+Average Slider Horizontal Break: -6.7
+Slider Strike Percentage: 60.0%
 
 
 
