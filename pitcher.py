@@ -39,18 +39,26 @@ class Pitcher:
         strikePitches = 0
         for pitch in self.pitches:
             if (pitch.ptype == "Fastball" or pitch.ptype == "FourSeamFastBall"):
-                if float(pitch.velocity) > maxFast:
-                    maxFast = float(pitch.velocity)
-                numPitches += 1
-                strikePitches += 1
-                totVelo += float(pitch.velocity)
-                totSpin += float(pitch.spin)
-                if pitch.vbreak == "" or pitch.hbreak == "":
+                if pitch.velocity == "" and numPitches > 0:
+                    totVelo += float(totVelo)/numPitches
+                    totSpin += float(totSpin)/numPitches
                     totHBreak += float(totHBreak)/numPitches
                     totVBreak += float(totVBreak)/numPitches
+                elif numPitches == 0:
+                    pass
                 else:
-                    totVBreak += float(pitch.vbreak)
-                    totHBreak += float(pitch.hbreak)
+                    if float(pitch.velocity) > maxFast:
+                        maxFast = float(pitch.velocity)
+                    numPitches += 1
+                    strikePitches += 1
+                    totVelo += float(pitch.velocity)
+                    totSpin += float(pitch.spin)
+                    if pitch.vbreak == "" or pitch.hbreak == "":
+                        totHBreak += float(totHBreak)/numPitches
+                        totVBreak += float(totVBreak)/numPitches
+                    else:
+                        totVBreak += float(pitch.vbreak)
+                        totHBreak += float(pitch.hbreak)
                 if pitch.outcome in ["StrikeCalled", "InPlay", "StrikeSwinging", "FoulBall"]:
                     totStrike += 1
                 if pitch.outcome == "Undefined":
@@ -130,8 +138,12 @@ class Pitcher:
         for pitch in self.pitches:
             if pitch.ptype == "Slider":
                 numPitches += 1
-                totVelo += float(pitch.velocity)
-                totSpin += float(pitch.spin)
+                if pitch.velocity == "":
+                    totVelo += float(totVelo)/numPitches
+                    totSpin += float(totSpin)/numPitches
+                else:
+                    totVelo += float(pitch.velocity)
+                    totSpin += float(pitch.spin)
                 if pitch.vbreak == "" or pitch.hbreak == "":
                     totHBreak += float(totHBreak)/numPitches
                     totVBreak += float(totVBreak)/numPitches

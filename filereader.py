@@ -80,14 +80,18 @@ def readCSV(csvfileString):
         
       i += 1
 
-readCSV("20230829-DepewField-Private-2_unverified.csv")
+"""readCSV("20230829-DepewField-Private-2_unverified.csv")
 readCSV("20230830-DepewField-Private-1_unverified.csv")
 readCSV("20230830-DepewField-Private-2_unverified.csv")
 readCSV("20230909-DepewField-Private-1_unverified.csv")
 readCSV("20230916-DepewField-Private-2_unverified.csv")
 readCSV("20230917-DepewField-Private-1_unverified.csv")
 readCSV("20230922-DepewField-Private-1_unverified.csv")
-readCSV("20230923-DepewField-Private-2_unverified.csv")
+readCSV("20230923-DepewField-Private-2_unverified.csv")"""
+readCSV("20231005-DepewField-Private-2_unverified.csv")
+readCSV("20231001-DepewField-Private-1_unverified.csv")
+#readCSV("20231003-DepewField-Private-1_unverified.csv")
+readCSV("20231004-DepewField-Private-1_unverified.csv")
 
 def writePitcherData(player):
   """Writes the averages of all of the pitchers data to a text document"""
